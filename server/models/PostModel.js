@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema(
   {
@@ -13,7 +13,7 @@ const schema = new mongoose.Schema(
     author: {
       type: String,
       required: true,
-      default: 'Anonymous',
+      default: "Anonymous",
     },
     attachment: String,
     likeCount: {
@@ -23,5 +23,4 @@ const schema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-export const PostModel = mongoose.model('Post', schema);
+module.exports = mongoose.model('Post', schema);
