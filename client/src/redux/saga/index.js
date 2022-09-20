@@ -1,7 +1,9 @@
 import { takeLatest, call } from "redux-saga/effects";
-import
+import *as actions from '../action'
+import *as api from '../../api'
 function* fetchPostSaga(action) {
-  const posts= yield call()
+  const posts= yield call(api.fetchPost);
+  console.log('[posts]', posts)
 }
 function* mySaga() {
   yield takeLatest(actions.getPost.getPostRequest, fetchPostSaga);
